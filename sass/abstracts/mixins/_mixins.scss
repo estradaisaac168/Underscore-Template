@@ -1,0 +1,42 @@
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Mixin para container responsivo 
+@mixin container($min: 360px, $preferred: 100%, $max: 1200px, $padding: 1rem) {
+	width: clamp($min, $preferred, $max);
+	margin: 0 auto;
+	padding: $padding;
+}
+
+// Column width with margin
+@mixin column-width($numberColumns: 3) {
+	width: map-get($columns, $numberColumns) - (($columns__margin * ($numberColumns - 1)) / $numberColumns );
+}
+
+
+
+// Mixin general para media queries hacia arriba 
+@mixin media-up($breakpoint) {
+	$value: map-get($breakpoints, $breakpoint);
+
+	@if $value !=null {
+		@media (min-width: $value) {
+			@content;
+		}
+	}
+}
+
+// Mixin general para media queries hacia abajo 
+@mixin media-down($breakpoint) {
+	$value: map-get($breakpoints, $breakpoint);
+
+	@if $value !=null {
+		@media (max-width: $value) {
+			@content;
+		}
+	}
+}
