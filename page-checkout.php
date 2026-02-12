@@ -16,7 +16,6 @@
 get_header();
 ?>
 
-
 <div class="site-grid-container">
 	<main id="primary" class="site-main">
 

@@ -1,7 +1,72 @@
+
 .single-product {
+
+	.woocommerce-message {
+	
+		@include alert($woocommerce__color-success, $color__white, $woocommerce__color-success);
+		padding-top: 24px;
+		padding-bottom: 24px;
+		a{
+			color: $color__white;
+			// text-decoration: none;
+		}
+	}
 
 	div.product {
 		position: relative;
+
+		display: flex;
+		flex-direction: column;
+
+
+		.item-product-single-sumary {
+
+
+			display: grid;
+			grid-template-columns: 1fr 2fr;
+
+
+			&__image-onsale {
+				position: relative;
+
+				.onsale {
+					@include pill;
+					position: absolute;
+					top: 10px;
+					left: 10px;
+					z-index: 9999;
+				}
+			}
+
+			.entry-summary{
+				margin-top: 0;
+				padding: 24px;
+
+				.product_title{
+					margin: 16px 0;
+				}
+
+
+				.cart{
+					display: flex;
+					align-items: center;
+
+					.quantity{
+						margin-right: 16px;
+					}
+				}
+
+				.product_meta{
+					margin-top: 16px;
+				}
+			}
+		}
+
+
+		.woocommerce-tabs {
+			display: flex;
+		}
+
 
 		.woocommerce-product-gallery {
 			position: relative;

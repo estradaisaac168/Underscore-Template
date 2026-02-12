@@ -10,6 +10,7 @@
 get_header();
 ?>
 
+?????????????????
 <div class="site-grid-container">
 	<main id="primary" class="site-main">
 
@@ -36,10 +37,9 @@ get_header();
 
 	</main><!-- #main -->
 
-<?php
-get_sidebar();?>
+<?php //get_sidebar();?>
 
 </div>
 
 <?php
-get_footer();
+// get_footer();

@@ -18,7 +18,9 @@ get_header();
 
 	</main><!-- #main -->
 
-	<?php get_sidebar(); ?>
+	<?php if (! is_singular('product')) {
+		get_sidebar();
+	} ?>
 </div>
 
 <?php

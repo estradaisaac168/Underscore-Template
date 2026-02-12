@@ -45,3 +45,38 @@ add_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to
 
 
 
+
+
+
+
+// Quitar la sidebar en productos individuales
+
+
+add_action( 'template_redirect', function () {
+    if ( is_singular('product') ) {
+        remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+    }
+});
+
+
+
+
+
+add_action('woocommerce_before_single_product_summary', function (){
+    echo '<div class="item-product-single-sumary">';
+},5);
+
+
+add_action('woocommerce_before_single_product_summary', function (){
+    echo '<div class="item-product-single-sumary__image-onsale">';
+},6);
+
+
+add_action('woocommerce_before_single_product_summary', function (){
+    echo '</div>';
+},21);
+
+
+add_action('woocommerce_after_single_product_summary', function (){
+    echo '</div>';
+},5);

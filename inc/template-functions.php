@@ -25,8 +25,9 @@ function food_one_body_classes($classes)
 	// }
 
 
+
 	// Adds a class of no-sidebar when there is no sidebar present.
-	if (! is_active_sidebar('sidebar-1') || is_front_page() || is_cart() || is_checkout()) {
+	if (! is_active_sidebar('sidebar-1') || is_front_page() || is_page('carrito') || is_checkout() || is_singular('product')) {
 		$classes[] = 'no-sidebar';
 	}
 

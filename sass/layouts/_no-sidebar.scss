@@ -9,12 +9,19 @@
 	// 		"footer";
 	// }
 
-	.grid-container{
+	.site-grid-container {
 		display: grid;
-		grid-template-columns: auto;
+		// grid-template-rows: auto;
 		grid-template-areas:
 			"header"
 			"main"
 			"footer";
+
+		@include media-up(lg) {
+			grid-template-areas:
+				"header header"
+				"main main"
+				"footer footer";
+		}
 	}
 }
