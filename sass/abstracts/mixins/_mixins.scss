@@ -40,3 +40,61 @@
 		}
 	}
 }
+
+
+
+// Mixin general para botones
+@mixin button-base(
+  $bg: $color__background-button,
+  $color: #fff,
+  $padding: 0.75rem 1.5rem,
+  $radius: 4px
+) {
+  display: inline-block;
+  background-color: $bg;
+  color: $color;
+  padding: $padding;
+  border: none;
+  border-radius: $radius;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($bg, 10%);
+  }
+
+  &:disabled {
+    background-color: lighten($bg, 20%);
+    cursor: not-allowed;
+  }
+}
+
+
+
+
+
+// Mixin para pill
+@mixin pill(
+  $bg: $color__on-sale,
+  $color: #fff,
+  $padding: 0.50rem 0.75rem,
+  $radius: 50rem,
+  $font-size: 0.875rem
+) {
+  display: inline-block;
+  background-color: $bg;
+  color: $color;
+  padding: $padding;
+  border-radius: $radius; // grande para que sea pill
+  font-size: $font-size;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+
+

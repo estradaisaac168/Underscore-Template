@@ -18,13 +18,14 @@
 	@include container;
 
 	display: grid;
+	grid-gap: $grid__margin;
 	grid-template-areas:
 		"header"
 		"sidebar"
 		"main"
 		"footer";
 
-	@include media-up(md) {
+	@include media-up(lg) {
 		grid-template-areas:
 			"header header"
 			"main sidebar"
@@ -37,7 +38,7 @@
 	display: flex;
 }
 
-.site-header-content {
+.site-header-container {
 	@include container;
 	grid-area: header;
 }
@@ -57,7 +58,7 @@
 
 }
 
-.site-footer-content {
+.site-footer-container {
 	@include container;
 
 	grid-area: footer;

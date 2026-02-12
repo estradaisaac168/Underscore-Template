@@ -182,3 +182,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/**
+ * Load Hooks file.
+ */
+
+if ( file_exists( get_template_directory() . '/inc/woocommerce-hooks.php' ) ) {
+	require get_template_directory() . '/inc/woocommerce-hooks.php';
+}

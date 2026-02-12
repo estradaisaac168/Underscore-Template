@@ -11,6 +11,9 @@
 		text-align: right;
 		line-height: 2.4;
 
+		display: flex;
+		flex-direction: column;
+
 		.button {
 			float: left;
 		}

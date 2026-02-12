@@ -59,51 +59,113 @@ table.shop_table_responsive tr td.download-actions .button {
 ul.products {
   margin: 0;
   padding: 0;
+  display: grid;
+  grid-gap: 16px;
+}
+@media (min-width: 768px) {
+  ul.products {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 ul.products li.product {
+  width: 100%;
   list-style: none;
   position: relative;
   margin-bottom: 2em;
 }
-ul.products li.product img {
+ul.products li.product .item-product-content {
+  display: grid;
+  grid-template-columns: 3fr 4fr;
+  min-height: 100%;
+  border: 1px solid #333;
+}
+ul.products li.product .item-product-content__image {
+  position: relative;
+}
+ul.products li.product .item-product-content__image img {
   display: block;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+ul.products li.product .item-product-content__image .onsale {
+  display: inline-block;
+  background-color: #b91818;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 50rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+ul.products li.product .item-product-content__description {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+ul.products li.product .item-product-content__description .woocommerce-loop-product__title {
+  margin-bottom: 0;
+}
+ul.products li.product .item-product-content__description p {
+  margin-bottom: 8px;
+}
+ul.products li.product .item-product-content__description .price {
+  margin-bottom: 4px;
+}
+ul.products li.product .item-product-content__description .add_to_cart_button {
+  margin-top: auto;
+  display: inline-block;
+  background-color: #e6e6e6;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+ul.products li.product .item-product-content__description .add_to_cart_button:hover {
+  background-color: rgb(204.5, 204.5, 204.5);
+}
+ul.products li.product .item-product-content__description .add_to_cart_button:disabled {
+  background-color: white;
+  cursor: not-allowed;
+}
+ul.products li.product .item-product-content__description .added_to_cart {
+  margin: 4px 0;
+  display: inline-block;
+  background-color: #e6e6e6;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+ul.products li.product .item-product-content__description .added_to_cart:hover {
+  background-color: rgb(204.5, 204.5, 204.5);
+}
+ul.products li.product .item-product-content__description .added_to_cart:disabled {
+  background-color: white;
+  cursor: not-allowed;
 }
 ul.products li.product .button {
   display: block;
 }
 
-@media screen and (min-width: 48em) {
-  ul.products li.product {
-    width: 30.7966666667%;
-    float: left;
-    margin-right: 3.8%;
-  }
-  ul.products li.product.first {
-    clear: both;
-  }
-  ul.products li.product.last {
-    margin-right: 0;
-  }
-  ul.products.columns-1 li.product {
-    float: none;
-    width: 100%;
-  }
-  ul.products.columns-2 li.product {
-    width: 48.1%;
-  }
-  ul.products.columns-3 li.product {
-    width: 30.7966666667%;
-  }
-  ul.products.columns-4 li.product {
-    width: 22.15%;
-  }
-  ul.products.columns-5 li.product {
-    width: 16.96%;
-  }
-  ul.products.columns-6 li.product {
-    width: 13.4933333333%;
-  }
-}
 /**
  * Single product
  */
@@ -420,6 +482,35 @@ p.no-comments {
     display: block;
   }
 }
+.woocommerce-pagination .page-numbers {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+.woocommerce-pagination .page-numbers li a,
+.woocommerce-pagination .page-numbers li span {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.2s ease;
+}
+.woocommerce-pagination .page-numbers li a:hover {
+  background-color: #f0f0f0;
+}
+.woocommerce-pagination .page-numbers li .current {
+  background-color: #e6e6e6;
+  color: #fff;
+  border-color: #e6e6e6;
+  font-weight: bold;
+}
+
 /**
  * WooCommerce widgets
  */
@@ -432,6 +523,8 @@ p.no-comments {
 .widget_price_filter .price_slider_amount {
   text-align: right;
   line-height: 2.4;
+  display: flex;
+  flex-direction: column;
 }
 .widget_price_filter .price_slider_amount .button {
   float: left;
